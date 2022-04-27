@@ -14,11 +14,18 @@
 
 </section>
 
-<form id="add-per-to-ticket" action="/flights/<%= flight._id%>/tickets" method="POST">
-  
-   
- 
+<form id="add-per-to-ticket" action="/flights/<%= flight._id%>/tickets" method="GET">
+  <button type = "submit">ADD TICKET</button>
+  <ul>
+    <%= console.log("ticketdetais",tickets)%>
+    <h4>Ticket Details</h4>
+   <% tickets.forEach(ticket=>{ %>
+<li><%=ticket.seat%></li>
+<li><%=ticket.price%></li>
+  <% })%>
+</ul>
 </form>
+
   <!-- new markup below -->
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST"
