@@ -23,8 +23,8 @@ const flightSchema = new Schema(
     }
     
     },
-    destinations:[destinationSchema],
-    flight: [{type: Schema.Types.ObjectId, ref: 'ticket'}]
+    destinations:[destinationSchema]
+   
 },{
     timestamps: true
 });

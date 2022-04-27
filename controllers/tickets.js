@@ -16,10 +16,14 @@ function addToFlight(req, res){
     });
   }
 function create(req, res){
-
-    ticket.create(req.body, function(err, ticket){
-res.redirect('/tickets/new');
-    });
+  console.log("retrt");
+const t = new ticket(req.body);
+t.save(function(err){
+  if(err){
+    res.redirect('/flights/${req.params.id}');
+  }
+})
+    
 }
 
 function newticket(req, res){
@@ -27,6 +31,7 @@ function newticket(req, res){
         res.render('tickets/new',{
             title:'Add Ticket',
             tickets
+            
             
         });
         

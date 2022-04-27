@@ -35,13 +35,14 @@ Flight.find({}, function(err,flights){
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flight: flight._id}, function(err, tickets) {
+       
           // Now you can pass both the flight and tickets in the res.render call
+         
         res.render('flights/show', {
-            title: 'Flight Details', flight, tickets
+            title: 'Flight Details', flight
             });
         });
-    });
+    
         // Now you can pass both the flight and tickets in the res.render call
 
 }
